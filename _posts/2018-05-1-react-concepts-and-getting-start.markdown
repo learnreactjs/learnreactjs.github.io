@@ -2,7 +2,7 @@
 layout: post
 title: React - Concepts and Getting Start
 date: 2018-05-01
-description: 
+description: React is a UI library developed at Facebook to facilitate the creation of interactive, stateful and reusable UI components.
 img: concepts-and-getting-start.png
 tags: [react, reactjs, learn react]
 ---
