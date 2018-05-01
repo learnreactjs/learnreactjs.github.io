@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+<loc>/react-concepts-and-getting-start/</loc>
+<lastmod>2018-05-01T00:00:00+07:00</lastmod>
+</url>
+<url>
+<loc>/sample_post/2017-04-06-how-i-rest-from-work/</loc>
+</url>
+<url>
+<loc>/sample_post/2017-04-06-welcome-to-jekyll/</loc>
+</url>
+<url>
+<loc>/sample_post/2017-09-12-10-tips-to-improve-your-workflow/</loc>
+</url>
+<url>
+<loc>/sample_post/2017-09-12-how-to-start-programming/</loc>
+</url>
+<url>
+<loc>/sample_post/2017-09-12-the-best-organizer-software/</loc>
+</url>
+<url>
+<loc>/</loc>
+</url>
+<url>
+<loc>/tags/</loc>
+</url>
+</urlset>
