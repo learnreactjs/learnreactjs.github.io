@@ -9,45 +9,46 @@ tags: [react, reactjs, learn react]
 
 Well, before we start building anything meaningful, its important that we cover some base concepts first, so lets getting start.
 
-### What is React?
 
-React is a UI library developed at Facebook to facilitate the creation of interactive, stateful and reusable UI components. It is used at Facebook in production, and Instagram.com is written in React.
+## What is React?
+
+React is a UI library developed at Facebook to facilitate the creation of interactive, stateful and reusable UI components. It is used at Facebook in production, and Instagram is written in React.
 
 One of it’s unique points is that not only does it perform on the client side, but it can also be rendered server side, and they can work together inter-operably.
 
-### Concepts
+## Concepts
 
 React has quite a small API. This makes it fun to use, easy to learn, and simple to understand. However, being simple does not mean it’s familiar. There are a few concepts to cover before getting started. Let’s look at each in turn:
 
-#### React Elements
+### React Elements
 
 React elements are JavasScript objects which represent HTML elements. They don’t exist in the browser. They represent browser elements such as an h1, div or section.
 
-#### JSX
+### JSX
 
 JSX is a technique for creating React elements and components.
 
-#### Virtual DOM
+### Virtual DOM
 
 The Virtual DOM is a JavaScript tree of React elements and components. React render the Virtual DOM to the browser to make the user interface visible. React observes the Virtual DOM for changes and automatically mutates browser DOM to mach the Virtual DOM.
 
 With a small understanding of these concepts we can move to using React. We will build a series of user interfaces, each adding a layer of functionality on the previous. We will build a photo stream similar to instagram.
 
-#### Rendering
+### Rendering
 
 The first order of business is rendering a virtual element (a React element or component). Remember, since a virtual element exists only in JavaScript memory, we must explicitly tell React to render it to the browser DOM.
 
-```
+```javascript
 React.render(<img src='src/logo.png' />, document.body);
 ```
 
 The render function accepts two arguments, a virtual element and a real DOM node. React takes the virtual element and inserts it into the given DOM node.
 
-#### Components
+### Components
 
 Components are the heart and soul of React. They are custom React elements. They are usually extended with unique functionality and structure.
 
-```
+```javascript
 var Photo = React.createClass({
   render: function() {
     return <img src='src/logo.png' />;
@@ -63,11 +64,11 @@ The Photo component is constructed and rendered to the document body.
 
 This component does nothing more than the previous React image element but it’s ready to be extended with custom functionality and structure.
 
-#### Props
+### Props
 
 Props can be thought of as a component’s options. They are given as arguments to a component and look exactly like HTML attributes.
 
-```
+```javascript
 var Photo = React.createClass({
   render: function() {
     return (
@@ -82,11 +83,11 @@ var Photo = React.createClass({
 React.render(<Photo imageURL='src/logo.png' caption='Phnom Penh, Cambodia' />, document.body);
 ```
 
-#### Specs, Lifecycle & State
+### Specs, Lifecycle & State
 
 The render method is the only required spec for creating a component, but there are serveral lifecycle methods & specs we can use that are mighty helpful when you actually want your component to do anything.
 
-Lifecycle Methods:
+#### Lifecycle Methods:
 
 * `componentWillMount` - Invoked once, on both client & server before rendering occurs.
 
@@ -96,7 +97,7 @@ Lifecycle Methods:
 
 * `componentWillUnmount` - invoked prior to unmounting component.
 
-Specs:
+#### Specs:
 
 * `getInitialState` - Return value is the initial value for state.
 
@@ -104,11 +105,11 @@ Specs:
 
 * `mixins` - An array of objects, used to extend the current component’s functionality.
 
-State
+#### State
 
 The state object is internal to a component. It holds data which can change over time.
 
-```
+```javascript
 var Photo = React.createClass({
   getInitialState: function() {
     return {liked: false};
@@ -155,11 +156,11 @@ Here’s what happens when the component is rendered to the browser DOM:
 
 * React isolates what has changed and updates the browser DOM.
 
-#### Composition
+### Composition
 
 Composition means combining smaller components to form a larger whole. For example the Photo component could be used inside a PhotoGallery component.
 
-```
+```javascript
 var Photo = React.createClass({
   toggleLiked: function() {
     this.setState({liked: !this.state.liked});
@@ -218,11 +219,11 @@ There’s a new PhotoGallery component which generates Photo components. In this
 
 The data is looped over and will generates 2 Photo components which are inserted into the return value of the component’s render function.
 
-#### Events
+### Events
 
 React also has a built in cross browser events system. The events are attached as properties of components and can trigger methods. Lets make our count increment below using events:
 
-```
+```javascript
 var Counter = React.createClass({
   incrementCount: function() {
     this.setSate({count: this.state.count + 1});

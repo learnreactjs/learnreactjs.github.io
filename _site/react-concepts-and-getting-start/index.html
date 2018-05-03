@@ -14,7 +14,7 @@
     <meta content="article" property="og:type">
   
   
-    <meta content="React - A JavaScript library for building user interfaces" property="og:description">
+    <meta content="React is a UI library developed at Facebook to facilitate the creation of interactive, stateful and reusable UI components." property="og:description">
   
   
     <meta content="/react-concepts-and-getting-start/" property="og:url">
@@ -49,14 +49,14 @@
     <meta name="twitter:url" content="/react-concepts-and-getting-start/">
   
   
-    <meta name="twitter:description" content="React - A JavaScript library for building user interfaces">
+    <meta name="twitter:description" content="React is a UI library developed at Facebook to facilitate the creation of interactive, stateful and reusable UI components.">
   
   
     <meta name="twitter:image" content="/assets/img/concepts-and-getting-start.png">
     <meta name="twitter:image:src" content="/assets/img/concepts-and-getting-start.png">
   
 
-	<meta name="description" content="">
+	<meta name="description" content="React is a UI library developed at Facebook to facilitate the creation of interactive, stateful and reusable UI components.">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<meta property="og:image" content="">
@@ -77,6 +77,10 @@
 	<link rel="stylesheet" href="/assets/fonts/font-awesome/css/font-awesome.min.css">
 	<!-- Styles -->
 	<link rel="stylesheet" href="/assets/css/main.css">
+
+  <link rel="stylesheet" href="/assets/css/prism.css">
+
+  <script src="/assets/js/prism.js"></script>
 </head>
 
 <body>
@@ -133,50 +137,50 @@
       </header>
       <p>Well, before we start building anything meaningful, its important that we cover some base concepts first, so lets getting start.</p>
 
-<h3 id="what-is-react">What is React?</h3>
+<h2 id="what-is-react">What is React?</h2>
 
-<p>React is a UI library developed at Facebook to facilitate the creation of interactive, stateful and reusable UI components. It is used at Facebook in production, and Instagram.com is written in React.</p>
+<p>React is a UI library developed at Facebook to facilitate the creation of interactive, stateful and reusable UI components. It is used at Facebook in production, and Instagram is written in React.</p>
 
 <p>One of it’s unique points is that not only does it perform on the client side, but it can also be rendered server side, and they can work together inter-operably.</p>
 
-<h3 id="concepts">Concepts</h3>
+<h2 id="concepts">Concepts</h2>
 
 <p>React has quite a small API. This makes it fun to use, easy to learn, and simple to understand. However, being simple does not mean it’s familiar. There are a few concepts to cover before getting started. Let’s look at each in turn:</p>
 
-<h4 id="react-elements">React Elements</h4>
+<h3 id="react-elements">React Elements</h3>
 
 <p>React elements are JavasScript objects which represent HTML elements. They don’t exist in the browser. They represent browser elements such as an h1, div or section.</p>
 
-<h4 id="jsx">JSX</h4>
+<h3 id="jsx">JSX</h3>
 
 <p>JSX is a technique for creating React elements and components.</p>
 
-<h4 id="virtual-dom">Virtual DOM</h4>
+<h3 id="virtual-dom">Virtual DOM</h3>
 
 <p>The Virtual DOM is a JavaScript tree of React elements and components. React render the Virtual DOM to the browser to make the user interface visible. React observes the Virtual DOM for changes and automatically mutates browser DOM to mach the Virtual DOM.</p>
 
 <p>With a small understanding of these concepts we can move to using React. We will build a series of user interfaces, each adding a layer of functionality on the previous. We will build a photo stream similar to instagram.</p>
 
-<h4 id="rendering">Rendering</h4>
+<h3 id="rendering">Rendering</h3>
 
 <p>The first order of business is rendering a virtual element (a React element or component). Remember, since a virtual element exists only in JavaScript memory, we must explicitly tell React to render it to the browser DOM.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>React.render(&lt;img src='src/logo.png' /&gt;, document.body);
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">React</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">img</span> <span class="nx">src</span><span class="o">=</span><span class="s1">'src/logo.png'</span> <span class="o">/&gt;</span><span class="p">,</span> <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">);</span>
 </code></pre></div></div>
 
 <p>The render function accepts two arguments, a virtual element and a real DOM node. React takes the virtual element and inserts it into the given DOM node.</p>
 
-<h4 id="components">Components</h4>
+<h3 id="components">Components</h3>
 
 <p>Components are the heart and soul of React. They are custom React elements. They are usually extended with unique functionality and structure.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var Photo = React.createClass({
-  render: function() {
-    return &lt;img src='src/logo.png' /&gt;;
-  }
-});
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">Photo</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
+  <span class="na">render</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="o">&lt;</span><span class="nx">img</span> <span class="nx">src</span><span class="o">=</span><span class="s1">'src/logo.png'</span> <span class="o">/&gt;</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">});</span>
 
-React.render(&lt;Photo /&gt;, document.body);
+<span class="nx">React</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">Photo</span> <span class="o">/&gt;</span><span class="p">,</span> <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">);</span>
 </code></pre></div></div>
 
 <p>The createClass function accepts an object which implements a render function.</p>
@@ -185,29 +189,29 @@ React.render(&lt;Photo /&gt;, document.body);
 
 <p>This component does nothing more than the previous React image element but it’s ready to be extended with custom functionality and structure.</p>
 
-<h4 id="props">Props</h4>
+<h3 id="props">Props</h3>
 
 <p>Props can be thought of as a component’s options. They are given as arguments to a component and look exactly like HTML attributes.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var Photo = React.createClass({
-  render: function() {
-    return (
-      &lt;div className='photo'&gt;
-        &lt;img src={this.props.imageURL} /&gt;
-        &lt;span&gt;{this.props.caption}&lt;/span&gt;
-      &lt;/div&gt;
-    );
-  }
-});
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">Photo</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
+  <span class="na">render</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="s1">'photo'</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">img</span> <span class="nx">src</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">imageURL</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">span</span><span class="o">&gt;</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">caption</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/span</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span>
 
-React.render(&lt;Photo imageURL='src/logo.png' caption='Phnom Penh, Cambodia' /&gt;, document.body);
+<span class="nx">React</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">Photo</span> <span class="nx">imageURL</span><span class="o">=</span><span class="s1">'src/logo.png'</span> <span class="nx">caption</span><span class="o">=</span><span class="s1">'Phnom Penh, Cambodia'</span> <span class="o">/&gt;</span><span class="p">,</span> <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">);</span>
 </code></pre></div></div>
 
-<h4 id="specs-lifecycle--state">Specs, Lifecycle &amp; State</h4>
+<h3 id="specs-lifecycle--state">Specs, Lifecycle &amp; State</h3>
 
 <p>The render method is the only required spec for creating a component, but there are serveral lifecycle methods &amp; specs we can use that are mighty helpful when you actually want your component to do anything.</p>
 
-<p>Lifecycle Methods:</p>
+<h4 id="lifecycle-methods">Lifecycle Methods:</h4>
 
 <ul>
   <li>
@@ -224,7 +228,7 @@ React.render(&lt;Photo imageURL='src/logo.png' caption='Phnom Penh, Cambodia' /&
   </li>
 </ul>
 
-<p>Specs:</p>
+<h4 id="specs">Specs:</h4>
 
 <ul>
   <li>
@@ -238,32 +242,32 @@ React.render(&lt;Photo imageURL='src/logo.png' caption='Phnom Penh, Cambodia' /&
   </li>
 </ul>
 
-<p>State</p>
+<h4 id="state">State</h4>
 
 <p>The state object is internal to a component. It holds data which can change over time.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var Photo = React.createClass({
-  getInitialState: function() {
-    return {liked: false};
-  },
-  toggleLiked: function() {
-    this.setState({liked: !this.state.liked});
-  },
-  render: function() {
-    var buttonClass= this.state.liked ? 'active' : '';
-    return (
-      &lt;div className='photo'&gt;
-        &lt;img src={this.props.src} /&gt;
-        &lt;div className='bar'&gt;
-          &lt;button onClick={this.toggleLiked} className={buttonClass}&gt;Heart&lt;/button&gt;
-          &lt;span&gt;{this.props.caption}&lt;/span&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    );
-  }
-});
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">Photo</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
+  <span class="na">getInitialState</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span><span class="na">liked</span><span class="p">:</span> <span class="kc">false</span><span class="p">};</span>
+  <span class="p">},</span>
+  <span class="na">toggleLiked</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span><span class="na">liked</span><span class="p">:</span> <span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">liked</span><span class="p">});</span>
+  <span class="p">},</span>
+  <span class="na">render</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">buttonClass</span><span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">liked</span> <span class="p">?</span> <span class="s1">'active'</span> <span class="p">:</span> <span class="s1">''</span><span class="p">;</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="s1">'photo'</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">img</span> <span class="nx">src</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">src</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="s1">'bar'</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">toggleLiked</span><span class="p">}</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">buttonClass</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">Heart</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>          <span class="o">&lt;</span><span class="nx">span</span><span class="o">&gt;</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">caption</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/span</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span>
 
-React.render(Photo src='src/logo.png' caption='Phnom Penh, Cambodia', document.body);
+<span class="nx">React</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="nx">Photo</span> <span class="nx">src</span><span class="o">=</span><span class="s1">'src/logo.png'</span> <span class="nx">caption</span><span class="o">=</span><span class="s1">'Phnom Penh, Cambodia'</span><span class="p">,</span> <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">);</span>
 </code></pre></div></div>
 
 <p>Having state in a component introduces a bit more complexity.</p>
@@ -296,60 +300,60 @@ React.render(Photo src='src/logo.png' caption='Phnom Penh, Cambodia', document.b
   </li>
 </ul>
 
-<h4 id="composition">Composition</h4>
+<h3 id="composition">Composition</h3>
 
 <p>Composition means combining smaller components to form a larger whole. For example the Photo component could be used inside a PhotoGallery component.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var Photo = React.createClass({
-  toggleLiked: function() {
-    this.setState({liked: !this.state.liked});
-  },
-  getInitialState: function() {
-    return {liked: false}
-  },
-  render: function() {
-    var buttonClass=this.state.liked ? 'active' : '';
-    return (
-      &lt;div className='photo'&gt;
-        &lt;img src={this.props.src} /&gt;
-        &lt;div className='bar'&gt;
-          &lt;button onClick={this.toggleLiked} className={buttonClass}&gt;Heart&lt;/button&gt;
-          &lt;span&gt;{this.props.caption}&lt;/span&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-    );
-  }
-});
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">Photo</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
+  <span class="na">toggleLiked</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span><span class="na">liked</span><span class="p">:</span> <span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">liked</span><span class="p">});</span>
+  <span class="p">},</span>
+  <span class="na">getInitialState</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span><span class="na">liked</span><span class="p">:</span> <span class="kc">false</span><span class="p">}</span>
+  <span class="p">},</span>
+  <span class="na">render</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">buttonClass</span><span class="o">=</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">liked</span> <span class="p">?</span> <span class="s1">'active'</span> <span class="p">:</span> <span class="s1">''</span><span class="p">;</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="s1">'photo'</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">img</span> <span class="nx">src</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">src</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="s1">'bar'</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">toggleLiked</span><span class="p">}</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">buttonClass</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">Heart</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>          <span class="o">&lt;</span><span class="nx">span</span><span class="o">&gt;</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">caption</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/span</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span>
 
-var PhotoGallery = React.createClass({
-  getDataFromServer: function() {
-    return [
-      {
-        url: 'src/phnom_penh.png',
-        caption: 'Phnom Penh'
-      },
-      {
-        url: 'src/sr.png',
-        caption: 'SR'
-      }
-    ];
-  },
-  render: function() {
-    var data=this.getDataFromServer();
+<span class="kd">var</span> <span class="nx">PhotoGallery</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
+  <span class="na">getDataFromServer</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="na">url</span><span class="p">:</span> <span class="s1">'src/phnom_penh.png'</span><span class="p">,</span>
+        <span class="na">caption</span><span class="p">:</span> <span class="s1">'Phnom Penh'</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="na">url</span><span class="p">:</span> <span class="s1">'src/sr.png'</span><span class="p">,</span>
+        <span class="na">caption</span><span class="p">:</span> <span class="s1">'SR'</span>
+      <span class="p">}</span>
+    <span class="p">];</span>
+  <span class="p">},</span>
+  <span class="na">render</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">data</span><span class="o">=</span><span class="k">this</span><span class="p">.</span><span class="nx">getDataFromServer</span><span class="p">();</span>
 
-    var photos = data.map(function(photo) {
-      return &lt;Photo src={photo.url} caption={photo.caption} /&gt;
-    });
+    <span class="kd">var</span> <span class="nx">photos</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">photo</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="o">&lt;</span><span class="nx">Photo</span> <span class="nx">src</span><span class="o">=</span><span class="p">{</span><span class="nx">photo</span><span class="p">.</span><span class="nx">url</span><span class="p">}</span> <span class="nx">caption</span><span class="o">=</span><span class="p">{</span><span class="nx">photo</span><span class="p">.</span><span class="nx">caption</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
+</span>    <span class="p">});</span>
 
-    return (
-      &lt;div className='photo-gallery'&gt;
-        {photos}
-      &lt;/div&gt;
-    );
-  }
-});
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="s1">'photo-gallery'</span><span class="o">&gt;</span>
+        <span class="p">{</span><span class="nx">photos</span><span class="p">}</span>
+      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span>
 
-React.render(&lt;PhotoGallery /&gt;, document.body);
+<span class="nx">React</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">PhotoGallery</span> <span class="o">/&gt;</span><span class="p">,</span> <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">);</span>
 </code></pre></div></div>
 
 <p>The Photo component is exactly the same as before.</p>
@@ -358,25 +362,25 @@ React.render(&lt;PhotoGallery /&gt;, document.body);
 
 <p>The data is looped over and will generates 2 Photo components which are inserted into the return value of the component’s render function.</p>
 
-<h4 id="events">Events</h4>
+<h3 id="events">Events</h3>
 
 <p>React also has a built in cross browser events system. The events are attached as properties of components and can trigger methods. Lets make our count increment below using events:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var Counter = React.createClass({
-  incrementCount: function() {
-    this.setSate({count: this.state.count + 1});
-  },
-  render: function() {
-    return (
-      &lt;div class="my-component"&gt;
-        &lt;h1&gt;Count: {this.state.count}&lt;/h1&gt;
-        &lt;button type="button" onClick={this.incrementCount}&gt;Increment&lt;/button&gt;
-      &lt;/div&gt;
-    );
-  }
-});
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">Counter</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
+  <span class="na">incrementCount</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">setSate</span><span class="p">({</span><span class="na">count</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">count</span> <span class="o">+</span> <span class="mi">1</span><span class="p">});</span>
+  <span class="p">},</span>
+  <span class="na">render</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">div</span> <span class="kd">class</span><span class="o">=</span><span class="s2">"my-component"</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="na">Count</span><span class="p">:</span> <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">count</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span>        <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"button"</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">incrementCount</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">Increment</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>    <span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">});</span>
 
-React.render(&lt;Counter /&gt;, document.body);
+<span class="nx">React</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">Counter</span> <span class="o">/&gt;</span><span class="p">,</span> <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">);</span>
 </code></pre></div></div>
 
 <p>React events:</p>
