@@ -484,6 +484,15 @@ pre code {
   padding-left: 0;
 }
 
+code {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 0 .3em;
+  color: #555;
+  margin: -1px 0;
+  border-radius: 0.4em;
+}
+
 table {
   border: 1px solid #aaa;
   background-color: #eee;
