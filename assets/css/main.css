@@ -493,6 +493,14 @@ code {
   border-radius: 0.4em;
 }
 
+pre code a {
+  text-decoration: none !important;
+  pointer-events: none;
+  cursor: default;
+  text-decoration: none;
+  color: #e6db74;
+}
+
 table {
   border: 1px solid #aaa;
   background-color: #eee;
