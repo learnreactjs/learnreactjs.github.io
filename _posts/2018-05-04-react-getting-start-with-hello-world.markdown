@@ -2,7 +2,7 @@
 layout: post
 title: React - Getting Start with Hello World
 date: 2018-05-01
-description: React is a UI library developed at Facebook to facilitate the creation of interactive, stateful and reusable UI components.
+description: 
 img: react-getting-start-with-hello-world.png
 tags: [react, reactjs, learn react]
 ---
