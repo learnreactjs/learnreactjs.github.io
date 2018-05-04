@@ -1,7 +1,7 @@
 ---
 layout: post
 title: React - Introducing JSX
-date: 2018-05-01
+date: 2018-05-03
 description: JSX is a JavaScript syntax extension that looks similar to XML. You can use a simple JSX transform with React.
 img: react-introducing-jsx.png
 tags: [react, reactjs, learn react]

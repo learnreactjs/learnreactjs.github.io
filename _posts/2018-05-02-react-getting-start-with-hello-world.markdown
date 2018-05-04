@@ -1,7 +1,7 @@
 ---
 layout: post
 title: React - Getting Start with Hello World
-date: 2018-05-01
+date: 2018-05-02
 description: 
 img: react-getting-start-with-hello-world.png
 tags: [react, reactjs, learn react]
