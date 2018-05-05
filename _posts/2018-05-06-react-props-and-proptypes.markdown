@@ -1,7 +1,7 @@
 ---
 layout: post
 title: React - Props and PropTypes
-date: 2018-05-04
+date: 2018-05-06
 description: 
 img: react-props-and-proptypes.png
 tags: [react, reactjs, learn react]
