@@ -57,6 +57,14 @@ pre {
   }
 }
 
+p {
+  code {
+    border: 1px solid #CCC;
+    padding: 0px 1px;
+    border-radius: 3px;
+  }
+}
+
 table {
   border: 1px solid #aaa;
   background-color: #eee;
