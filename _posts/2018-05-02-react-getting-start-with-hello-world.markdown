@@ -18,6 +18,7 @@ The React library can be used directly from the Facebook CDN to increase the per
 ```html
 <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
 <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 ```
 
 But I would like to recommend using [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/lang/en/) for managing front-end dependencies.
@@ -26,14 +27,14 @@ To install React with Yarn, run:
 
 ```javascript
 yarn init
-yarn add react react-dom
+yarn add react react-dom babel-cli babel-preset-react
 ```
 
 To install React with npm, run:
 
 ```javascript
 npm init
-npm install --save react react-dom
+npm install --save react react-dom babel-cli babel-preset-react
 ```
 
 ## Getting start with Hello World
@@ -44,60 +45,31 @@ Let create a `helloworld.html` file with the following contents:
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8" />
-    <title>Hello World</title>
+    <meta charset="UTF-8">
+    <title>Learn React</title>
     <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
   </head>
   <body>
-    <script type="text/javascript">
-      var App = React.createClass({
-        render: function() {
-          return React.createElement("h1", null, "Hello World")
+    <script type="text/jsx">
+      class App extends React.Component {
+        render() {
+          return (
+            <h1>Hello World!</h1>
+          );
         }
-      });
+      }
 
-      React.render(React.createElement(App), document.body);
+      ReactDOM.render(
+        <App />, 
+        document.body
+      );
     </script>
   </body>
 </html>
 ```
 
-The primary type in React is the ReactElement. It has four properties: type, props, key and ref. It has no methods and nothing on the prototype. We can create a element through `React.createElement`.
+[Try it on CodePen](https://codepen.io/Bunlong/pen/KRXQvG).
 
-To render a new tree into the DOM, we create `ReactElements` and pass them to `React.render` along with a regular DOM Element.
-
-In codes above we create a `h1 element` in `App component` and render it in body DOM.
-
-## Getting start with Hello World - Separate File
-
-Let create a `helloworld.js` file with the following contents:
-
-```javascript
-<!-- helloworld.js -->
-var App = React.createClass({
-  render: function() {
-    return React.createElement("h1", null, "Hello World")
-  }
-});
-
-React.render(React.createElement(App), document.body);
-
-```
-
-Update HTML file as below:
-
-```javascript
-<!-- helloworld.html -->
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Hello World</title>
-    <script src="react.js"></script>
-  </head>
-  <body>
-    <script src="helloworld.js"></script>
-  </body>
-</html>
-```
+The above code we create a `h1 element` in `App component` and render it in body DOM.

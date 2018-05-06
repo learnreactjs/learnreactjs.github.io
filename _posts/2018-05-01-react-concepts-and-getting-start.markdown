@@ -17,7 +17,7 @@ One of it’s unique points is that not only does it perform on the client side,
 
 ## Concepts
 
-React has quite a small API. This makes it fun to use, easy to learn, and simple to understand. However, being simple does not mean it’s familiar. There are a few concepts to cover before getting started. Let’s look at each in turn:
+React has quite a small API. This makes it fun to use, easy to learn, and simple to understand. However, being simple does not mean it’s familiar. There are a few concepts to cover before getting started. Let's look at each in turn:
 
 ### React Elements
 
@@ -38,8 +38,13 @@ With a small understanding of these concepts we can move to using React. We will
 The first order of business is rendering a virtual element (a React element or component). Remember, since a virtual element exists only in JavaScript memory, we must explicitly tell React to render it to the browser DOM.
 
 ```javascript
-React.render(<img src='src/logo.png' />, document.body);
+ReactDOM.render(
+  <h3>Hello World!</h3>,
+  document.body
+);
 ```
+
+[Try it on CodePen](https://codepen.io/Bunlong/pen/LmzyWG).
 
 The render function accepts two arguments, a virtual element and a real DOM node. React takes the virtual element and inserts it into the given DOM node.
 
@@ -48,14 +53,21 @@ The render function accepts two arguments, a virtual element and a real DOM node
 Components are the heart and soul of React. They are custom React elements. They are usually extended with unique functionality and structure.
 
 ```javascript
-var Photo = React.createClass({
-  render: function() {
-    return <img src='src/logo.png' />;
+class HelloWorld extends React.Component {
+  render() {
+    return (
+      <h1>Hello World!</h1>
+    );
   }
-});
+}
 
-React.render(<Photo />, document.body);
+ReactDOM.render(
+  <HelloWorld />, 
+  document.body
+);
 ```
+
+[Try it on CodePen](https://codepen.io/Bunlong/pen/MGEmOR).
 
 The createClass function accepts an object which implements a render function.
 
@@ -68,19 +80,21 @@ This component does nothing more than the previous React image element but it’
 Props can be thought of as a component’s options. They are given as arguments to a component and look exactly like HTML attributes.
 
 ```javascript
-var Photo = React.createClass({
-  render: function() {
+class HelloWorld extends React.Component {
+  render() {
     return (
-      <div className='photo'>
-        <img src={this.props.imageURL} />
-        <span>{this.props.caption}</span>
-      </div>
+      <h1>{this.props.text}</h1>
     );
   }
-});
+}
 
-React.render(<Photo imageURL='src/logo.png' caption='Phnom Penh, Cambodia' />, document.body);
+ReactDOM.render(
+  <HelloWorld text="Hello World!" />, 
+  document.body
+);
 ```
+
+[Try it on CodePen](https://codepen.io/Bunlong/pen/MGEmqM).
 
 ### Specs, Lifecycle & State
 
@@ -109,136 +123,141 @@ The render method is the only required spec for creating a component, but there 
 The state object is internal to a component. It holds data which can change over time.
 
 ```javascript
-var Photo = React.createClass({
-  getInitialState: function() {
-    return {liked: false};
-  },
-  toggleLiked: function() {
+class Trigger extends React.Component {
+  state = { liked: false };
+
+  toggleLiked() {
     this.setState({liked: !this.state.liked});
-  },
-  render: function() {
-    var buttonClass= this.state.liked ? 'active' : '';
+  }
+
+  render() {
+    const status = this.state.liked ? 'Liked' : 'Unliked';
     return (
-      <div className='photo'>
-        <img src={this.props.src} />
-        <div className='bar'>
-          <button onClick={this.toggleLiked} className={buttonClass}>Heart</button>
-          <span>{this.props.caption}</span>
-        </div>
+      <div>
+        <button onClick={this.toggleLiked.bind(this)}>{status}</button>
       </div>
     );
   }
-});
+}
 
-React.render(Photo src='src/logo.png' caption='Phnom Penh, Cambodia', document.body);
+ReactDOM.render(
+  <Trigger />, 
+  document.body
+);
 ```
+
+[Try it on CodePen](https://codepen.io/Bunlong/pen/ZoXKNE).
 
 Having state in a component introduces a bit more complexity.
 
-The component has a new function getInitialState. React calls this function when the component is initialised. The returned object is set as the component’s initial state (as the function name implies).
+The component initial state using `state = { liked: false}`.
 
 The component has another new function toggleLiked. This function calls setState on the component which toggles the liked value.
 
-Within the component’s render function a variable buttonClass is assigned either ‘active’ or nothing – depending on the liked state.
+Within the component`s render function a variable status is assigned either ‘Liked’ or "Unliked" – depending on the liked state.
 
-buttonClass is used as a class name on the React button element. The button also has an onclick event handler set to the toggleLiked function.
+The button also has an onclick event handler set to the toggleLiked function.
 
 Here’s what happens when the component is rendered to the browser DOM:
 
-* When the component’s button is clicked, toggleLiked is called.
+* When the component's button is clicked, toggleLiked is called.
 
 * The liked state is changed.
 
-*  React re-renders the component to the virtual DOM.
+* React re-renders the component to the virtual DOM.
 
-* The new virtual DOm is compared with previous virtual DOM.
+* The new virtual DOM is compared with previous virtual DOM.
 
 * React isolates what has changed and updates the browser DOM.
 
 ### Composition
 
-Composition means combining smaller components to form a larger whole. For example the Photo component could be used inside a PhotoGallery component.
+Composition means combining smaller components to form a larger whole. For example the Trigger component could be used inside a TriggerList component.
 
 ```javascript
-var Photo = React.createClass({
-  toggleLiked: function() {
+class Trigger extends React.Component {
+  state = { liked: false };
+
+  toggleLiked() {
     this.setState({liked: !this.state.liked});
-  },
-  getInitialState: function() {
-    return {liked: false}
-  },
-  render: function() {
-    var buttonClass=this.state.liked ? 'active' : '';
+  }
+
+  render() {
+    const status = this.state.liked ? 'Liked' : 'Unliked';
     return (
-      <div className='photo'>
-        <img src={this.props.src} />
-        <div className='bar'>
-          <button onClick={this.toggleLiked} className={buttonClass}>Heart</button>
-          <span>{this.props.caption}</span>
-        </div>
+      <div>
+        <button onClick={this.toggleLiked.bind(this)}>{status}</button>
       </div>
     );
   }
-});
+}
 
-var PhotoGallery = React.createClass({
-  getDataFromServer: function() {
+class TriggerList extends React.Component {
+  getDataFromServer() {
     return [
       {
-        url: 'src/phnom_penh.png',
-        caption: 'Phnom Penh'
+        buttonColor: 'red'
       },
       {
-        url: 'src/sr.png',
-        caption: 'SR'
+        buttonColor: 'blue'
       }
     ];
-  },
-  render: function() {
-    var data=this.getDataFromServer();
+  }
 
-    var photos = data.map(function(photo) {
-      return <Photo src={photo.url} caption={photo.caption} />
+  render() {
+    var data = this.getDataFromServer();
+
+    var lists = data.map(function(photo) {
+      return <Trigger />
     });
 
     return (
-      <div className='photo-gallery'>
-        {photos}
+      <div>
+        {lists}
       </div>
     );
   }
-});
+}
 
-React.render(<PhotoGallery />, document.body);
+ReactDOM.render(<TriggerList />, document.body);
 ```
 
-The Photo component is exactly the same as before.
+[Try it on CodePen](https://codepen.io/Bunlong/pen/aGLwLw).
 
-There’s a new PhotoGallery component which generates Photo components. In this case there’s some fake server data which return an array of 2 objects, each with a url and caption.
+The Trigger component is exactly the same as before.
 
-The data is looped over and will generates 2 Photo components which are inserted into the return value of the component’s render function.
+There's a new TriggerList component which generates Trigger components. In this case there's some fake server data which return an array of 2 objects, each with a buttonColor.
+
+The data is looped over and will generates 2 Trigger components which are inserted into the return value of the component's render function.
 
 ### Events
 
 React also has a built in cross browser events system. The events are attached as properties of components and can trigger methods. Lets make our count increment below using events:
 
 ```javascript
-var Counter = React.createClass({
-  incrementCount: function() {
-    this.setSate({count: this.state.count + 1});
-  },
-  render: function() {
+class Counter extends React.Component {
+  state = { count: 1 };
+
+  incrementCount() {
+    this.setState((prevState, props) => ({
+      count: prevState.count + 1
+    })); 
+  }
+
+  render() {
     return (
-      <div class="my-component">
+      <div>
         <h1>Count: {this.state.count}</h1>
-        <button type="button" onClick={this.incrementCount}>Increment</button>
+          <button type="button" onClick={this.incrementCount.bind(this)}>Increment</button>
       </div>
     );
   }
-});
+}
 
-React.render(<Counter />, document.body);
+ReactDOM.render(<Counter />, document.body);
 ```
+
+[Try it on CodePen](https://codepen.io/Bunlong/pen/XqegYR).
 
 React events:
 

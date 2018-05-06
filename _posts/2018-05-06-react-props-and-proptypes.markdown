@@ -1,7 +1,7 @@
 ---
 layout: post
 title: React - Props and PropTypes
-date: 2018-05-06
+date: 2018-05-05
 description: 
 img: react-props-and-proptypes.png
 tags: [react, reactjs, learn react]
@@ -51,7 +51,7 @@ npm install prop-types --save
 So how do we write the propTypes?
 
 ```javascript
-propTypes: {
+propTypes = {
   size: PropTypes.number,
   position: PropTypes.string.isRequired
 }
@@ -60,7 +60,7 @@ propTypes: {
 And more awesome, if we can’t find a propTypes that suits our needs we can write own with regex or shapes:
 
 ```javascript
-propTypes: {
+propTypes = {
   email: function(props, propName, componentName) {
     if (!/emailRegex/.test(props[email])) {
       return new Error('Give me a real email!');
@@ -73,35 +73,33 @@ propTypes: {
 }
 ```
 
-Full example:
+Exercises:
 
 ```javascript
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8" />
-    <title>React PropTypes</title>
+    <meta charset="UTF-8">
+    <title>Learn React</title>
     <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
-    <script crossorigin src="https://unpkg.com/prop-types@15.6/prop-types.js"></script>
+    <script crossorigin src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script src="https://unpkg.com/prop-types@15.6/prop-types.js"></script>
   </head>
   <body>
-    <script type="text/javascript">
-      var Profile = React.createClass({
-        getDefaultProps: function() {
-          return {
+    <script type="text/jsx">
+      class Profile extends React.Component {
+        constructor(props) {
+          super(props)
+          this.state = {
             name: 'This is a default prop',
             age: 0,
             activate: true
           }
-        },
-        propTypes: {
-          name: React.PropTypes.string,
-          age: React.PropTypes.number.isRequired,
-          activate: React.PropTypes.bool.isRequired
-        },
-        render: function() {
-          return (
+        }
+        
+        render() {
+          return ( 
             <div>
               <h1>Name: {this.props.name}</h1>
               <h1>Age: {this.props.age}</h1>
@@ -109,10 +107,27 @@ Full example:
             </div>
           );
         }
-      });
+      }
 
-      React.render(<Profile name="Brian" age={0} activate={true} />, document.body);
+      Profile.propTypes = {
+        name: PropTypes.string,
+        age: PropTypes.number,
+        activate: PropTypes.bool
+      }
+
+      Profile.defaultProps = {
+        name: 'Ryan',
+        age: 30,
+        activate: false
+      }
+
+      ReactDOM.render(
+        <Profile />,
+        document.body
+      );
     </script>
   </body>
 </html>
 ```
+
+[Try it on CodePen](https://codepen.io/Bunlong/pen/GdMQYO).

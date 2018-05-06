@@ -1,7 +1,7 @@
 ---
 layout: post
 title: React - Components
-date: 2018-05-04
+date: 2018-05-05
 description: Components let you split the UI into independent, reusable pieces. Components are like JavaScript functions; they accept inputs called `props` and return React elements.
 img: react-components.png
 tags: [react, reactjs, learn react]
@@ -63,9 +63,11 @@ const element = <Welcome name="Brian" />;
 
 ReactDOM.render(
   element,
-  document.getElementById('root')
+  document.body
 );
 ```
+
+[Try it on CodePen](https://codepen.io/Bunlong/pen/gzGvKX).
 
 Let’s take a look what happens in this example:
 
@@ -107,9 +109,11 @@ function App() {
 
 ReactDOM.render(
   <App />,
-  document.getElementById('root')
+  document.body
 );
 ```
+
+[Try it on CodePen](https://codepen.io/Bunlong/pen/zjERLx).
 
 ## Extracting Components
 

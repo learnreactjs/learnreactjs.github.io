@@ -17,14 +17,14 @@
     <meta content="React is a UI library developed at Facebook to facilitate the creation of interactive, stateful and reusable UI components." property="og:description">
   
   
-    <meta content="/react-concepts-and-getting-start/" property="og:url">
+    <meta content="http://localhost:4000/react-concepts-and-getting-start/" property="og:url">
   
   
     <meta content="2018-05-01T00:00:00+07:00" property="article:published_time">
-    <meta content="/about/" property="article:author">
+    <meta content="http://localhost:4000/about/" property="article:author">
   
   
-    <meta content="/assets/img/react-concepts-and-getting-start.png" property="og:image">
+    <meta content="http://localhost:4000/assets/img/react-concepts-and-getting-start.png" property="og:image">
   
   
     
@@ -46,14 +46,14 @@
     <meta name="twitter:title" content="React - Concepts and Getting Start">
   
   
-    <meta name="twitter:url" content="/react-concepts-and-getting-start/">
+    <meta name="twitter:url" content="http://localhost:4000/react-concepts-and-getting-start/">
   
   
     <meta name="twitter:description" content="React is a UI library developed at Facebook to facilitate the creation of interactive, stateful and reusable UI components.">
   
   
-    <meta name="twitter:image" content="/assets/img/react-concepts-and-getting-start.png">
-    <meta name="twitter:image:src" content="/assets/img/react-concepts-and-getting-start.png">
+    <meta name="twitter:image" content="http://localhost:4000/assets/img/react-concepts-and-getting-start.png">
+    <meta name="twitter:image:src" content="http://localhost:4000/assets/img/react-concepts-and-getting-start.png">
   
 
 	<meta name="description" content="React is a UI library developed at Facebook to facilitate the creation of interactive, stateful and reusable UI components.">
@@ -165,8 +165,13 @@
 
 <p>The first order of business is rendering a virtual element (a React element or component). Remember, since a virtual element exists only in JavaScript memory, we must explicitly tell React to render it to the browser DOM.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">React</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">img</span> <span class="nx">src</span><span class="o">=</span><span class="s1">'src/logo.png'</span> <span class="o">/&gt;</span><span class="p">,</span> <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">);</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
+  <span class="o">&lt;</span><span class="nx">h3</span><span class="o">&gt;</span><span class="nx">Hello</span> <span class="nx">World</span><span class="o">!&lt;</span><span class="sr">/h3&gt;</span><span class="err">,
+</span>  <span class="nb">document</span><span class="p">.</span><span class="nx">body</span>
+<span class="p">);</span>
 </code></pre></div></div>
+
+<p><a href="https://codepen.io/Bunlong/pen/LmzyWG">Try it on CodePen</a>.</p>
 
 <p>The render function accepts two arguments, a virtual element and a real DOM node. React takes the virtual element and inserts it into the given DOM node.</p>
 
@@ -174,14 +179,21 @@
 
 <p>Components are the heart and soul of React. They are custom React elements. They are usually extended with unique functionality and structure.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">Photo</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
-  <span class="na">render</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="o">&lt;</span><span class="nx">img</span> <span class="nx">src</span><span class="o">=</span><span class="s1">'src/logo.png'</span> <span class="o">/&gt;</span><span class="p">;</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">HelloWorld</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+      <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Hello</span> <span class="nx">World</span><span class="o">!&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span>    <span class="p">);</span>
   <span class="p">}</span>
-<span class="p">});</span>
+<span class="p">}</span>
 
-<span class="nx">React</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">Photo</span> <span class="o">/&gt;</span><span class="p">,</span> <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">);</span>
+<span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
+  <span class="o">&lt;</span><span class="nx">HelloWorld</span> <span class="o">/&gt;</span><span class="p">,</span> 
+  <span class="nb">document</span><span class="p">.</span><span class="nx">body</span>
+<span class="p">);</span>
 </code></pre></div></div>
+
+<p><a href="https://codepen.io/Bunlong/pen/MGEmOR">Try it on CodePen</a>.</p>
 
 <p>The createClass function accepts an object which implements a render function.</p>
 
@@ -193,19 +205,21 @@
 
 <p>Props can be thought of as a component’s options. They are given as arguments to a component and look exactly like HTML attributes.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">Photo</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
-  <span class="na">render</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">HelloWorld</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">return</span> <span class="p">(</span>
-      <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="s1">'photo'</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="nx">img</span> <span class="nx">src</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">imageURL</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
-</span>        <span class="o">&lt;</span><span class="nx">span</span><span class="o">&gt;</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">caption</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/span</span><span class="err">&gt;
-</span>      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+      <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">text</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
 </span>    <span class="p">);</span>
   <span class="p">}</span>
-<span class="p">});</span>
+<span class="p">}</span>
 
-<span class="nx">React</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">Photo</span> <span class="nx">imageURL</span><span class="o">=</span><span class="s1">'src/logo.png'</span> <span class="nx">caption</span><span class="o">=</span><span class="s1">'Phnom Penh, Cambodia'</span> <span class="o">/&gt;</span><span class="p">,</span> <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">);</span>
+<span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
+  <span class="o">&lt;</span><span class="nx">HelloWorld</span> <span class="nx">text</span><span class="o">=</span><span class="s2">"Hello World!"</span> <span class="o">/&gt;</span><span class="p">,</span> 
+  <span class="nb">document</span><span class="p">.</span><span class="nx">body</span>
+<span class="p">);</span>
 </code></pre></div></div>
+
+<p><a href="https://codepen.io/Bunlong/pen/MGEmqM">Try it on CodePen</a>.</p>
 
 <h3 id="specs-lifecycle--state">Specs, Lifecycle &amp; State</h3>
 
@@ -246,39 +260,40 @@
 
 <p>The state object is internal to a component. It holds data which can change over time.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">Photo</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
-  <span class="na">getInitialState</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="p">{</span><span class="na">liked</span><span class="p">:</span> <span class="kc">false</span><span class="p">};</span>
-  <span class="p">},</span>
-  <span class="na">toggleLiked</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Trigger</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="nx">state</span> <span class="o">=</span> <span class="p">{</span> <span class="na">liked</span><span class="p">:</span> <span class="kc">false</span> <span class="p">};</span>
+
+  <span class="nx">toggleLiked</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span><span class="na">liked</span><span class="p">:</span> <span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">liked</span><span class="p">});</span>
-  <span class="p">},</span>
-  <span class="na">render</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">buttonClass</span><span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">liked</span> <span class="p">?</span> <span class="s1">'active'</span> <span class="p">:</span> <span class="s1">''</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">status</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">liked</span> <span class="p">?</span> <span class="s1">'Liked'</span> <span class="p">:</span> <span class="s1">'Unliked'</span><span class="p">;</span>
     <span class="k">return</span> <span class="p">(</span>
-      <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="s1">'photo'</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="nx">img</span> <span class="nx">src</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">src</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
-</span>        <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="s1">'bar'</span><span class="o">&gt;</span>
-          <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">toggleLiked</span><span class="p">}</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">buttonClass</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">Heart</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
-</span>          <span class="o">&lt;</span><span class="nx">span</span><span class="o">&gt;</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">caption</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/span</span><span class="err">&gt;
-</span>        <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+      <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">toggleLiked</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">)}</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">status</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
 </span>      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
 </span>    <span class="p">);</span>
   <span class="p">}</span>
-<span class="p">});</span>
+<span class="p">}</span>
 
-<span class="nx">React</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="nx">Photo</span> <span class="nx">src</span><span class="o">=</span><span class="s1">'src/logo.png'</span> <span class="nx">caption</span><span class="o">=</span><span class="s1">'Phnom Penh, Cambodia'</span><span class="p">,</span> <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">);</span>
+<span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span>
+  <span class="o">&lt;</span><span class="nx">Trigger</span> <span class="o">/&gt;</span><span class="p">,</span> 
+  <span class="nb">document</span><span class="p">.</span><span class="nx">body</span>
+<span class="p">);</span>
 </code></pre></div></div>
+
+<p><a href="https://codepen.io/Bunlong/pen/ZoXKNE">Try it on CodePen</a>.</p>
 
 <p>Having state in a component introduces a bit more complexity.</p>
 
-<p>The component has a new function getInitialState. React calls this function when the component is initialised. The returned object is set as the component’s initial state (as the function name implies).</p>
+<p>The component initial state using <code class="highlighter-rouge">state = { liked: false}</code>.</p>
 
 <p>The component has another new function toggleLiked. This function calls setState on the component which toggles the liked value.</p>
 
-<p>Within the component’s render function a variable buttonClass is assigned either ‘active’ or nothing – depending on the liked state.</p>
+<p>Within the component`s render function a variable status is assigned either ‘Liked’ or “Unliked” – depending on the liked state.</p>
 
-<p>buttonClass is used as a class name on the React button element. The button also has an onclick event handler set to the toggleLiked function.</p>
+<p>The button also has an onclick event handler set to the toggleLiked function.</p>
 
 <p>Here’s what happens when the component is rendered to the browser DOM:</p>
 
@@ -293,7 +308,7 @@
     <p>React re-renders the component to the virtual DOM.</p>
   </li>
   <li>
-    <p>The new virtual DOm is compared with previous virtual DOM.</p>
+    <p>The new virtual DOM is compared with previous virtual DOM.</p>
   </li>
   <li>
     <p>React isolates what has changed and updates the browser DOM.</p>
@@ -302,86 +317,90 @@
 
 <h3 id="composition">Composition</h3>
 
-<p>Composition means combining smaller components to form a larger whole. For example the Photo component could be used inside a PhotoGallery component.</p>
+<p>Composition means combining smaller components to form a larger whole. For example the Trigger component could be used inside a TriggerList component.</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">Photo</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
-  <span class="na">toggleLiked</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Trigger</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="nx">state</span> <span class="o">=</span> <span class="p">{</span> <span class="na">liked</span><span class="p">:</span> <span class="kc">false</span> <span class="p">};</span>
+
+  <span class="nx">toggleLiked</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">({</span><span class="na">liked</span><span class="p">:</span> <span class="o">!</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">liked</span><span class="p">});</span>
-  <span class="p">},</span>
-  <span class="na">getInitialState</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="p">{</span><span class="na">liked</span><span class="p">:</span> <span class="kc">false</span><span class="p">}</span>
-  <span class="p">},</span>
-  <span class="na">render</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">buttonClass</span><span class="o">=</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">liked</span> <span class="p">?</span> <span class="s1">'active'</span> <span class="p">:</span> <span class="s1">''</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">status</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">liked</span> <span class="p">?</span> <span class="s1">'Liked'</span> <span class="p">:</span> <span class="s1">'Unliked'</span><span class="p">;</span>
     <span class="k">return</span> <span class="p">(</span>
-      <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="s1">'photo'</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="nx">img</span> <span class="nx">src</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">src</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
-</span>        <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="s1">'bar'</span><span class="o">&gt;</span>
-          <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">toggleLiked</span><span class="p">}</span> <span class="nx">className</span><span class="o">=</span><span class="p">{</span><span class="nx">buttonClass</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">Heart</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
-</span>          <span class="o">&lt;</span><span class="nx">span</span><span class="o">&gt;</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">.</span><span class="nx">caption</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/span</span><span class="err">&gt;
-</span>        <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+      <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">toggleLiked</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">)}</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">status</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
 </span>      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
 </span>    <span class="p">);</span>
   <span class="p">}</span>
-<span class="p">});</span>
+<span class="p">}</span>
 
-<span class="kd">var</span> <span class="nx">PhotoGallery</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
-  <span class="na">getDataFromServer</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<span class="kd">class</span> <span class="nx">TriggerList</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="nx">getDataFromServer</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">return</span> <span class="p">[</span>
       <span class="p">{</span>
-        <span class="na">url</span><span class="p">:</span> <span class="s1">'src/phnom_penh.png'</span><span class="p">,</span>
-        <span class="na">caption</span><span class="p">:</span> <span class="s1">'Phnom Penh'</span>
+        <span class="na">buttonColor</span><span class="p">:</span> <span class="s1">'red'</span>
       <span class="p">},</span>
       <span class="p">{</span>
-        <span class="na">url</span><span class="p">:</span> <span class="s1">'src/sr.png'</span><span class="p">,</span>
-        <span class="na">caption</span><span class="p">:</span> <span class="s1">'SR'</span>
+        <span class="na">buttonColor</span><span class="p">:</span> <span class="s1">'blue'</span>
       <span class="p">}</span>
     <span class="p">];</span>
-  <span class="p">},</span>
-  <span class="na">render</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="kd">var</span> <span class="nx">data</span><span class="o">=</span><span class="k">this</span><span class="p">.</span><span class="nx">getDataFromServer</span><span class="p">();</span>
+  <span class="p">}</span>
 
-    <span class="kd">var</span> <span class="nx">photos</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">photo</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="o">&lt;</span><span class="nx">Photo</span> <span class="nx">src</span><span class="o">=</span><span class="p">{</span><span class="nx">photo</span><span class="p">.</span><span class="nx">url</span><span class="p">}</span> <span class="nx">caption</span><span class="o">=</span><span class="p">{</span><span class="nx">photo</span><span class="p">.</span><span class="nx">caption</span><span class="p">}</span> <span class="sr">/</span><span class="err">&gt;
-</span>    <span class="p">});</span>
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">getDataFromServer</span><span class="p">();</span>
+
+    <span class="kd">var</span> <span class="nx">lists</span> <span class="o">=</span> <span class="nx">data</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">photo</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="o">&lt;</span><span class="nx">Trigger</span> <span class="o">/&gt;</span>
+    <span class="p">});</span>
 
     <span class="k">return</span> <span class="p">(</span>
-      <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">className</span><span class="o">=</span><span class="s1">'photo-gallery'</span><span class="o">&gt;</span>
-        <span class="p">{</span><span class="nx">photos</span><span class="p">}</span>
+      <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+        <span class="p">{</span><span class="nx">lists</span><span class="p">}</span>
       <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
 </span>    <span class="p">);</span>
   <span class="p">}</span>
-<span class="p">});</span>
+<span class="p">}</span>
 
-<span class="nx">React</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">PhotoGallery</span> <span class="o">/&gt;</span><span class="p">,</span> <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">);</span>
+<span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">TriggerList</span> <span class="o">/&gt;</span><span class="p">,</span> <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">);</span>
 </code></pre></div></div>
 
-<p>The Photo component is exactly the same as before.</p>
+<p><a href="https://codepen.io/Bunlong/pen/aGLwLw">Try it on CodePen</a>.</p>
 
-<p>There’s a new PhotoGallery component which generates Photo components. In this case there’s some fake server data which return an array of 2 objects, each with a url and caption.</p>
+<p>The Trigger component is exactly the same as before.</p>
 
-<p>The data is looped over and will generates 2 Photo components which are inserted into the return value of the component’s render function.</p>
+<p>There’s a new TriggerList component which generates Trigger components. In this case there’s some fake server data which return an array of 2 objects, each with a buttonColor.</p>
+
+<p>The data is looped over and will generates 2 Trigger components which are inserted into the return value of the component’s render function.</p>
 
 <h3 id="events">Events</h3>
 
 <p>React also has a built in cross browser events system. The events are attached as properties of components and can trigger methods. Lets make our count increment below using events:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">Counter</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
-  <span class="na">incrementCount</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-    <span class="k">this</span><span class="p">.</span><span class="nx">setSate</span><span class="p">({</span><span class="na">count</span><span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">count</span> <span class="o">+</span> <span class="mi">1</span><span class="p">});</span>
-  <span class="p">},</span>
-  <span class="na">render</span><span class="p">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">class</span> <span class="nx">Counter</span> <span class="kd">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+  <span class="nx">state</span> <span class="o">=</span> <span class="p">{</span> <span class="na">count</span><span class="p">:</span> <span class="mi">1</span> <span class="p">};</span>
+
+  <span class="nx">incrementCount</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">setState</span><span class="p">((</span><span class="nx">prevState</span><span class="p">,</span> <span class="nx">props</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">({</span>
+      <span class="na">count</span><span class="p">:</span> <span class="nx">prevState</span><span class="p">.</span><span class="nx">count</span> <span class="o">+</span> <span class="mi">1</span>
+    <span class="p">}));</span> 
+  <span class="p">}</span>
+
+  <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
     <span class="k">return</span> <span class="p">(</span>
-      <span class="o">&lt;</span><span class="nx">div</span> <span class="kd">class</span><span class="o">=</span><span class="s2">"my-component"</span><span class="o">&gt;</span>
-        <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="na">Count</span><span class="p">:</span> <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">count</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
-</span>        <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"button"</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">incrementCount</span><span class="p">}</span><span class="o">&gt;</span><span class="nx">Increment</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+      <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="nx">Count</span><span class="p">:</span> <span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">state</span><span class="p">.</span><span class="nx">count</span><span class="p">}</span><span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span>          <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="s2">"button"</span> <span class="nx">onClick</span><span class="o">=</span><span class="p">{</span><span class="k">this</span><span class="p">.</span><span class="nx">incrementCount</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">)}</span><span class="o">&gt;</span><span class="nx">Increment</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
 </span>      <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
 </span>    <span class="p">);</span>
   <span class="p">}</span>
-<span class="p">});</span>
+<span class="p">}</span>
 
-<span class="nx">React</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">Counter</span> <span class="o">/&gt;</span><span class="p">,</span> <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">);</span>
+<span class="nx">ReactDOM</span><span class="p">.</span><span class="nx">render</span><span class="p">(</span><span class="o">&lt;</span><span class="nx">Counter</span> <span class="o">/&gt;</span><span class="p">,</span> <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">);</span>
 </code></pre></div></div>
+
+<p><a href="https://codepen.io/Bunlong/pen/XqegYR">Try it on CodePen</a>.</p>
 
 <p>React events:</p>
 
@@ -411,9 +430,9 @@
 
       <div class="page-footer">
         <div class="page-share">
-          <a href="https://twitter.com/intent/tweet?text=React - Concepts and Getting Start&url=/react-concepts-and-getting-start/" title="Share on Twitter" rel="nofollow" target="_blank">Twitter</a>
-          <a href="https://facebook.com/sharer.php?u=/react-concepts-and-getting-start/" title="Share on Facebook" rel="nofollow" target="_blank">Facebook</a>
-          <a href="https://plus.google.com/share?url=/react-concepts-and-getting-start/" title="Share on Google+" rel="nofollow" target="_blank">Google+</a>
+          <a href="https://twitter.com/intent/tweet?text=React - Concepts and Getting Start&url=http://localhost:4000/react-concepts-and-getting-start/" title="Share on Twitter" rel="nofollow" target="_blank">Twitter</a>
+          <a href="https://facebook.com/sharer.php?u=http://localhost:4000/react-concepts-and-getting-start/" title="Share on Facebook" rel="nofollow" target="_blank">Facebook</a>
+          <a href="https://plus.google.com/share?url=http://localhost:4000/react-concepts-and-getting-start/" title="Share on Google+" rel="nofollow" target="_blank">Google+</a>
         </div>
         <div class="page-tag">
           

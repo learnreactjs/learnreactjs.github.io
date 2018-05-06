@@ -10,6 +10,15 @@ html {
   line-height: 1.5;
 }
 
+a {
+  text-decoration: none !important;
+  color: #3366BB;
+}
+
+a:visited { 
+  color: #3366BB;
+}
+
 body {
   font-family: 'Lato', sans-serif;
   color: $body-color;

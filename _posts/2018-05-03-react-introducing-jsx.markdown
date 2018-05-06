@@ -25,26 +25,34 @@ You don’t have to use JSX with React. You can just use plain JS. However, I re
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8" />
-    <title>Hello World</title>
+    <meta charset="UTF-8">
+    <title>Learn React</title>
     <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
   </head>
   <body>
-    <script type="text/javascript">
-      var App = React.createClass({
-        render: function() {
-          return (<h1>Hello World</h1>);
+    <script type="text/jsx">
+      class App extends React.Component {
+        render() {
+          return (
+            <h1>Hello World!</h1>
+          );
         }
-      });
+      }
 
-      React.render(<App />, document.body);
+      ReactDOM.render(
+        <App />, 
+        document.body
+      );
     </script>
   </body>
 </html>
 ```
 
-Look at the code above I create an `App` class which render `h1` with text `Hellow World`; that looks very similar to XML syntax or HTML tag.
+[Try it on CodePen](https://codepen.io/Bunlong/pen/KRXQvG).
+
+Look at the code above we create an `App` class which render `h1` with text `Hellow World`; that looks very similar to XML syntax or HTML tag.
 
 ## Transform
 

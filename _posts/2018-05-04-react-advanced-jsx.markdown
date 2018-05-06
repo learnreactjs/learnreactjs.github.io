@@ -19,7 +19,7 @@ function formatName(user) {
 }
 
 const user = {
-  firstName: 'Jinglong',
+  firstName: 'Brian',
   lastName: 'Van'
 };
 
@@ -31,9 +31,11 @@ const element = (
 
 ReactDOM.render(
   element,
-  document.getElementById('root')
+  document.body
 );
 ```
+
+[Try it on CodePen](https://codepen.io/Bunlong/pen/RyLQMg).
 
 ## JSX with Expression
 

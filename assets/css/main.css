@@ -446,6 +446,15 @@ html {
   line-height: 1.5;
 }
 
+a {
+  text-decoration: none !important;
+  color: #3366BB;
+}
+
+a:visited {
+  color: #3366BB;
+}
+
 body {
   font-family: 'Lato', sans-serif;
   color: #515151;
@@ -482,23 +491,6 @@ pre code {
   border: 0;
   padding-right: 0;
   padding-left: 0;
-}
-
-code {
-  background: #fff;
-  border: 1px solid #ddd;
-  padding: 0 .3em;
-  color: #555;
-  margin: -1px 0;
-  border-radius: 0.4em;
-}
-
-pre code a {
-  text-decoration: none !important;
-  pointer-events: none;
-  cursor: default;
-  text-decoration: none;
-  color: #e6db74;
 }
 
 table {
