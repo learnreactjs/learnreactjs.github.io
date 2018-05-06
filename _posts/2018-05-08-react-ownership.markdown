@@ -2,7 +2,7 @@
 layout: post
 title: React - Ownership
 date: 2018-05-06
-description: 
+description: In React, an owner is the component that sets the props of other components. 
 img: react-ownership.png
 tags: [react, reactjs, learn react]
 ---
