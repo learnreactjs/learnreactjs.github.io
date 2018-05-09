@@ -11,7 +11,7 @@ tags: [react, reactjs, learn react]
 
 React is built around the concept of components. The components get many specific attributes just like a XML syntax and HTML tag does.
 
-The attributes are called "props" in ReactJS and can be of any type. It can be a string, function or an Array, as long as its valid javascript you can use it as a prop.
+The attributes are called "props" in React and can be of any type. It can be a string, function or an Array, as long as its valid javascript you can use it as a prop.
 
 ```javascript
 <MyComponent size={24} position="fixed" />
@@ -91,11 +91,6 @@ Exercises:
       class Profile extends React.Component {
         constructor(props) {
           super(props)
-          this.state = {
-            name: 'This is a default prop',
-            age: 0,
-            activate: true
-          }
         }
         
         render() {
