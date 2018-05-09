@@ -1,6 +1,6 @@
 ---
 layout: post
-title: React - Component Lifecycle Mounting
+title: React - Component Lifecycle Updating
 date: 2018-05-08
 description: 
 img: react-component-lifecycle-updating.png
