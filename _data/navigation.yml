@@ -1,0 +1,157 @@
+# main links
+docs:
+  - title: Introduction
+    children:
+      - title: "What is React?"
+        url: /
+  - title: Semantics/Terminology
+    children:
+      - title: "React Semantics/Terminology"
+        url: /react-semantics-and-terminology
+  - title: Setting up
+    children:
+      - title: "Using react & react-dom"
+        url: /react-set-up-react-and-react-dom
+      - title: "Using JSX via Babel"
+        url: /use-jsx-via-babel
+      - title: "Using ES with React"
+        url: /use-es-with-react
+      - title: "Writing React with CodePen"
+        url: /write-react-with-codepen
+  - title: React Node
+    children:
+      - title: "What is React Node?"
+        url: /what-is-react-node
+      - title: "Creating React Node"
+        url: /create-react-node
+      - title: "Rendering to DOM"
+        url: /render-to-dom
+      - title: "Defining Node Attributes/Props"
+        url: /define-node-attributes-and-props
+      - title: "Inlining CSS on Element Nodes"
+        url: /inline-css-on-element-node
+      - title: "Using Built-in Element Factories"
+        url: /use-built-in-element-factories
+      - title: "Defining React Node Events"
+        url: /define-react-node-event
+  - title: JSX
+    children:
+      - title: "What is React Node?"
+        url: /what-is-react-node
+      - title: "Creating React Nodes With JSX"
+        url: /create-react-node-with-jsx
+      - title: "Rendering JSX to DOM"
+        url: /render-jsx-to-dom
+      - title: "Using JavaScript Expressions in JSX"
+        url: /use-javascript-expression-in-jsx
+      - title: "Using JavaScript Comments in JSX"
+        url: /use-javascript-comment-in-jsx
+      - title: "Using Inline CSS in JSX"
+        url: /use-inline-css-in-jsx
+      - title: "Defining Attributes/Props in JSX"
+        url: /define-attribute-props-in-jsx
+      - title: "Defining Events in JSX"
+        url: /define-event-in-jsx
+  - title: React Components
+    children:
+      - title: "What is React Component?"
+        url: /what-is-react-component
+      - title: "Creating React components"
+        url: /create-react-component
+      - title: "Components Return One Node/Component"
+        url: /component-return-one-node-component
+      - title: "Mentioning to a Component Instance"
+        url: /mention-to-a-component-instance
+      - title: "Defining Events on Components"
+        url: /define-event-on-component
+      - title: "Composing Components"
+        url: /composing-components
+      - title: "Components Lifecycle"
+        url: /component-lifecycle
+      - title: "Accessing Children Components/Nodes"
+        url: /access-child-component-node
+      - title: "Using Refs and DOM"
+        url: /use-refs-and-dom
+      - title: "Re-rendering A Component"
+        url: /re-render-a-component
+  - title: React Component Props
+    children:
+      - title: "What is Component Props?"
+        url: /what-is-component-props
+      - title: "Sending Component Props"
+        url: /send-component-props
+      - title: "Getting Component Props"
+        url: /get-component-props
+      - title: "Setting Default Component Props"
+        url: /set-default-component-props
+      - title: "Component Props More Than Strings"
+        url: /component-props-more-than-string
+      - title: "Validating Component Props"
+        url: /validate-component-props
+  - title: React Component State
+    children:
+      - title: "What is Component State?"
+        url: /what-is-component-state
+      - title: "Working with Component State"
+        url: /work-with-component-state
+      - title: "State Vs Props"
+        url: /state-vs-props
+      - title: "Creating Stateless Function Components"
+        url: /create-stateless-function-component
+      # - title: "Installation"
+      #   url: /install-create-react-app
+      # - title: "Structure"
+      #   url: /create-react-app-structure
+      # - title: "Create React App Development Server"
+      #   url: /starting-the-create-react-app-development-server
+        
+      # - title: "Structure"
+      #   url: /structure/
+      # - title: "Installation"
+      #   url: /installation/
+      # - title: "Upgrading"
+      #   url: /upgrading/
+  # - title: Customization
+  #   children:
+  #     - title: "Configuration"
+  #       url: /configuration/
+  #     - title: "Overriding Theme Defaults"
+  #       url: /overriding-theme-defaults/
+  #     - title: "Navigation"
+  #       url: /navigation/
+  #     - title: "UI Text"
+  #       url: /ui-text/
+  #     - title: "Authors"
+  #       url: /authors/
+  #     - title: "Layouts"
+  #       url: /layouts/
+  # - title: Content
+  #   children:
+  #     - title: "Working with Posts"
+  #       url: /posts/
+  #     - title: "Working with Pages"
+  #       url: /pages/
+  #     - title: "Working with Collections"
+  #       url: /collections/
+  #     - title: "Helpers"
+  #       url: /helpers/
+  #     - title: "Utility Classes"
+  #       url: /utility-classes/
+  # - title: Extras
+  #   children:
+  #     - title: "Stylesheets"
+  #       url: /stylesheets/
+  #     - title: "JavaScript"
+  #       url: /javascript/
+  # - title: Meta
+  #   children:
+  #     - title: "History"
+  #       url: /history/
+  #     - title: "Contributing"
+  #       url: /contributing/
+  #     - title: "Old 2.2 Docs"
+  #       url: /docs-2-2/
+  #     - title: "License"
+  #       url: /license/
+  #     - title: "Terms &amp; Privacy Policy"
+  #       url: /terms/

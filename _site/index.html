@@ -1,239 +1,717 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="utf-8">
-	<title>Learn React</title>
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.11.2 by Michael Rose
+  Copyright 2013-2018 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE.txt
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
 
-  <!-- Edit site and author settings in `_config.yml` to make the social details your own -->
+<!-- begin _includes/seo.html --><title>What is React? - Learn React</title>
+<meta name="description" content="What is React? - Learn React">
 
-    <meta content="Learn React" property="og:site_name">
-  
-    <meta content="Learn React" property="og:title">
-  
-  
-    <meta content="website" property="og:type">
-  
-  
-    <meta content="React - A JavaScript library for building user interfaces" property="og:description">
-  
-  
-    <meta content="/" property="og:url">
-  
-  
-  
-    <meta content="/assets/img/logo.png" property="og:image">
-  
-  
-  
 
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Learn React">
+<meta property="og:title" content="What is React?">
+<meta property="og:url" content="/">
+
+
+  <meta property="og:description" content="What is React? - Learn React">
+
+
+
+  <meta property="og:image" content="/assets/images/learn-create-react-app.png">
+
+
+
+  <meta name="twitter:site" content="@BunlongVan">
+  <meta name="twitter:title" content="What is React?">
+  <meta name="twitter:description" content="What is React? - Learn React">
+  <meta name="twitter:url" content="/">
+
+  
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="@">
-    <meta name="twitter:creator" content="@bunlongvan">
-  
-    <meta name="twitter:title" content="Learn React">
-  
-  
-    <meta name="twitter:url" content="/">
-  
-  
-    <meta name="twitter:description" content="React - A JavaScript library for building user interfaces">
-  
-  
-    <meta name="twitter:image:src" content="/assets/img/logo.png">
+    
+      <meta name="twitter:image" content="/assets/images/learn-create-react-app.png">
+    
   
 
-	<meta name="description" content="">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<meta property="og:image" content="">
-	<link rel="shortcut icon" href="/assets/img/favicon/favicon.ico" type="image/x-icon">
-	<link rel="apple-touch-icon" href="/assets/img/favicon/apple-touch-icon.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicon/apple-touch-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="/assets/img/favicon/apple-touch-icon-114x114.png">
-	<!-- Chrome, Firefox OS and Opera -->
-	<meta name="theme-color" content="#263959">
-	<!-- Windows Phone -->
-	<meta name="msapplication-navbutton-color" content="#263959">
-	<!-- iOS Safari -->
-	<meta name="apple-mobile-web-app-status-bar-style" content="#263959">
-	<!-- Google Fonts -->
-	<link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
-	<!-- Font Awesome -->
-	<link rel="stylesheet" href="/assets/fonts/font-awesome/css/font-awesome.min.css">
-	<!-- Styles -->
-	<link rel="stylesheet" href="/assets/css/main.css">
+  
 
-  <link rel="stylesheet" href="/assets/css/prism.css">
 
-  <script src="/assets/js/prism.js"></script>
-</head>
 
-<body>
+  <meta property="article:published_time" content="2018-05-21T21:15:43+07:00">
 
-  <div class="wrapper">
-    <aside class="sidebar">
-  <header>
-    <div class="about">
-      <div class="cover-author-image">
-        <a href="/"><img src="/assets/img/logo.png" alt="React"></a>
-      </div>
-      <div class="author-name">React</div>
-      <p>A JavaScript library for building user interfaces</p>
+
+
+  <meta property="article:modified_time" content="2018-05-15T02:58:49+07:00">
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="/">
+
+
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url": null,
+      "logo": "/assets/images/learn-create-react-app.png"
+    }
+  </script>
+
+
+
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Person",
+      "name": "React",
+      "url": null,
+      "sameAs": null
+    }
+  </script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+<link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Learn React Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+
+<!--[if lte IE 9]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+<link rel="icon" href="/assets/images/favicon.ico">
+  </head>
+
+  <body class="layout--single">
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    <div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        <a class="site-title" href="/">Learn React</a>
+        <ul class="visible-links">
+          
+        </ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle Menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
     </div>
-  </header> <!-- End Header -->
-  <footer>
-    <section class="contact">
-      <h3 class="contact-title">Contact</h3>
-      <ul>
-        
-          <li><a href="https://twitter.com/bunlongvan" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-        
-        
-          <!-- <li><a href="https://facebook.com/bunlong.van" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li> -->
-        
-        
-          <li class="github"><a href="http://github.com/bunlong" target="_blank"><i class="fa fa-github"></i></a></li>
-        
-        
-          <!-- <li class="linkedin"><a href="https://in.linkedin.com/in/bunlongvan" target="_blank"><i class="fa fa-linkedin"></i></a></li> -->
-        
-        
-          <li class="email"><a href="mailto:bunlong.van@gmail.com"><i class="fa fa-envelope-o"></i></a></li>
-        
-      </ul>
-    </section> <!-- End Section Contact -->
-    <div class="copyright">
-      <p>Copyright &copy; 2018  Reactjs</p>
-    </div>
-  </footer> <!-- End Footer -->
-</aside> <!-- End Sidebar -->
-<div class="content-box clearfix">
-  
-<article class="post">
-  
-    <a class="post-thumbnail" style="background-image: url(/assets/img/create-react-app.png)" href="/react-create-react-app/"></a>
-  
-  <div class="post-content">
-    <h2 class="post-title"><a href="/react-create-react-app/">React - Create React App</a></h2>
-    <p>Setting up Gulp, Webpack, Browserify, Babel, JSX, ES6, ES6 modules, hot reloading, … etc. manually...</p>
-    <span class="post-date">2018, May 09&nbsp;&nbsp;&nbsp;—&nbsp;</span>
-    <span class="post-words">2 minute read</span>
   </div>
-</article>
+</div>
 
-<article class="post">
-  
-    <a class="post-thumbnail" style="background-image: url(/assets/img/react-composing-component.png)" href="/react-composing-component/"></a>
-  
-  <div class="post-content">
-    <h2 class="post-title"><a href="/react-composing-component/">React - Composing Component</a></h2>
-    <p>Components is the best way to reuse code in React, React components can make use...</p>
-    <span class="post-date">2018, May 09&nbsp;&nbsp;&nbsp;—&nbsp;</span>
-    <span class="post-words">2 minute read</span>
-  </div>
-</article>
-
-<article class="post">
-  
-    <a class="post-thumbnail" style="background-image: url(/assets/img/react-component-lifecycle-unmounting.png)" href="/react-component-lifecycle-unmounting/"></a>
-  
-  <div class="post-content">
-    <h2 class="post-title"><a href="/react-component-lifecycle-unmounting/">React - Component Lifecycle Unmounting</a></h2>
-    <p>React unmounting have 1 methods: componentWillUnmount. componentWillUnmount is invoked immediately before a component is unmounted...</p>
-    <span class="post-date">2018, May 08&nbsp;&nbsp;&nbsp;—&nbsp;</span>
-    <span class="post-words">3 minute read</span>
-  </div>
-</article>
-
-<article class="post">
-  
-    <a class="post-thumbnail" style="background-image: url(/assets/img/react-component-lifecycle-updating.png)" href="/react-component-lifecycle-updating/"></a>
-  
-  <div class="post-content">
-    <h2 class="post-title"><a href="/react-component-lifecycle-updating/">React - Component Lifecycle Updating</a></h2>
-    <p>React updating have 5 methods: UNSAFE_componentWillReceiveProps(object nextProps) shouldComponentUpdate(object nextProps, object nextState) UNSAFE_componentWillUpdate(object nextProps, object nextState)...</p>
-    <span class="post-date">2018, May 08&nbsp;&nbsp;&nbsp;—&nbsp;</span>
-    <span class="post-words">4 minute read</span>
-  </div>
-</article>
-
-<article class="post">
-  
-    <a class="post-thumbnail" style="background-image: url(/assets/img/react-component-lifecycle-mounting.png)" href="/react-component-lifecycle-mounting/"></a>
-  
-  <div class="post-content">
-    <h2 class="post-title"><a href="/react-component-lifecycle-mounting/">React - Component Lifecycle Mounting</a></h2>
-    <p>React mounting have 3 methods: this.state in the constructor: object is invoked before a component...</p>
-    <span class="post-date">2018, May 08&nbsp;&nbsp;&nbsp;—&nbsp;</span>
-    <span class="post-words">3 minute read</span>
-  </div>
-</article>
-
-<article class="post">
-  
-    <a class="post-thumbnail" style="background-image: url(/assets/img/react-component-lifecycle.png)" href="/react-component-lifecycle/"></a>
-  
-  <div class="post-content">
-    <h2 class="post-title"><a href="/react-component-lifecycle/">React - Component Lifecycle</a></h2>
-    <p>ReactJS components have three main parts of their lifecycle: Mounting: A component is being inserted...</p>
-    <span class="post-date">2018, May 07&nbsp;&nbsp;&nbsp;—&nbsp;</span>
-    <span class="post-words">1 minute read</span>
-  </div>
-</article>
-
-<article class="post">
-  
-    <a class="post-thumbnail" style="background-image: url(/assets/img/react-accessing-child-properties.png)" href="/react-accessing-child-properties/"></a>
-  
-  <div class="post-content">
-    <h2 class="post-title"><a href="/react-accessing-child-properties/">React - Accessing Child Properties</a></h2>
-    <p>When you are building your React components, you’ll probably want to access child properties of...</p>
-    <span class="post-date">2018, May 06&nbsp;&nbsp;&nbsp;—&nbsp;</span>
-    <span class="post-words">2 minute read</span>
-  </div>
-</article>
-
-<article class="post">
-  
-    <a class="post-thumbnail" style="background-image: url(/assets/img/react-refs-and-dom.png)" href="/react-refs-and-dom/"></a>
-  
-  <div class="post-content">
-    <h2 class="post-title"><a href="/react-refs-and-dom/">React - Refs and DOM</a></h2>
-    <p>Refs provide a way to access DOM nodes or React elements created in the render...</p>
-    <span class="post-date">2018, May 06&nbsp;&nbsp;&nbsp;—&nbsp;</span>
-    <span class="post-words">7 minute read</span>
-  </div>
-</article>
-
-
-<div class="container">
-  <nav class="pagination" role="pagination">
-    <ul>
+    <div class="initial-content">
       
 
-      <p><span class="page-number">Page 1 of 2</span></p>
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle Menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">Introduction</span>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            <li><a href="/" class="active">What is React?</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Semantics/Terminology</span>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            <li><a href="/react-semantics-and-terminology" class="">React Semantics/Terminology</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Setting up</span>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            <li><a href="/react-set-up-react-and-react-dom" class="">Using react & react-dom</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="/use-jsx-via-babel" class="">Using JSX via Babel</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="/use-es-with-react" class="">Using ES with React</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="/write-react-with-codepen" class="">Writing React with CodePen</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">React Node</span>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            <li><a href="/what-is-react-node" class="">What is React Node?</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="/create-react-node" class="">Creating React Node</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="/render-to-dom" class="">Rendering to DOM</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="/define-node-attributes-and-props" class="">Defining Node Attributes/Props</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="/inline-css-on-element-node" class="">Inlining CSS on Element Nodes</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="/use-built-in-element-factories" class="">Using Built-in Element Factories</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="/define-react-node-event" class="">Defining React Node Events</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">JSX</span>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            <li><a href="/what-is-react-node" class="">What is React Node?</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="/create-react-node-with-jsx" class="">Creating React Nodes With JSX</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="/render-jsx-to-dom" class="">Rendering JSX to DOM</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="/use-javascript-expression-in-jsx" class="">Using JavaScript Expressions in JSX</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="/use-javascript-comment-in-jsx" class="">Using JavaScript Comments in JSX</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="/use-inline-css-in-jsx" class="">Using Inline CSS in JSX</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="/define-attribute-props-in-jsx" class="">Defining Attributes/Props in JSX</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="/define-event-in-jsx" class="">Defining Events in JSX</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">React Components</span>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            <li><a href="/what-is-react-component" class="">What is React Component?</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="/create-react-component" class="">Creating React components</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="/component-return-one-node-component" class="">Components Return One Node/Component</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="/mention-to-a-component-instance" class="">Mentioning to a Component Instance</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="/define-event-on-component" class="">Defining Events on Components</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="/composing-components" class="">Composing Components</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="/component-lifecycle" class="">Components Lifecycle</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="/access-child-component-node" class="">Accessing Children Components/Nodes</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="/use-refs-and-dom" class="">Using Refs and DOM</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="/re-render-a-component" class="">Re-rendering A Component</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">React Component Props</span>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            <li><a href="/what-is-component-props" class="">What is Component Props?</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="/send-component-props" class="">Sending Component Props</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="/get-component-props" class="">Getting Component Props</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="/set-default-component-props" class="">Setting Default Component Props</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="/component-props-more-than-string" class="">Component Props More Than Strings</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="/validate-component-props" class="">Validating Component Props</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">React Component State</span>
+        
+
+        
+        <ul>
+          
+            
+            
+
+            
+            
+
+            <li><a href="/what-is-component-state" class="">What is Component State?</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="/work-with-component-state" class="">Working with Component State</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="/state-vs-props" class="">State Vs Props</a></li>
+          
+            
+            
+
+            
+            
+
+            <li><a href="/create-stateless-function-component" class="">Creating Stateless Function Components</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+    
+  
+  </div>
+
+
+  <article class="page" itemscope itemtype="http://schema.org/CreativeWork">
+    <meta itemprop="headline" content="What is React?">
+    <meta itemprop="description" content="What is React? - Learn React">
+    
+    <meta itemprop="dateModified" content="May 14, 2018">
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">What is React?
+</h1>
+          
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p>React is a UI library developed at Facebook to facilitate the creation of interactive, stateful and reusable UI components. It is used at Facebook in production, and Instagram is written in React.</p>
+
+<p>One of it’s unique points is that not only does it perform on the client side, but it can also be rendered server side, and they can work together inter-operably.</p>
+
+<p><img src="/assets/images/react.png" alt="React" /></p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+          <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2018-05-14">May 14, 2018</time></p>
+        
+      </footer>
 
       
-      <p><a class="older-posts" href="/page/2/"><i class="fa fa-long-arrow-right" aria-hidden="true"></i></a></p>
+
       
-    </ul>
+  <nav class="pagination">
+    
+      <a href="#" class="pagination--pager disabled">Previous</a>
+    
+    
+      <a href="/react-semantics-and-terminology" class="pagination--pager" title="React Semantics/Terminology
+">Next</a>
+    
   </nav>
-</div>
 
+    </div>
 
-</div>
+    
+  </article>
 
-  </div>
   
-  <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  ga('create', '', 'auto');
-  ga('send', 'pageview');
-</script> <!-- End Analytics -->
+  
+</div>
+    </div>
 
-</body>
+    
+
+    <div class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+      <li><strong>Follow:</strong></li>
+    
+    
+      <li><a href="https://github.com/Bunlong"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+    
+    
+      <li><a href="https://twitter.com/BunlongVan"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+    
+    
+    
+    
+    <li><a href="/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+  </ul>
+</div>
+
+<div class="page__footer-copyright">Copyright &copy; 2018 React, Maintained by <a href="https://github.com/Bunlong" target="_blank">Bunlong</a></div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.12/js/all.js"></script>
+
+
+
+
+
+
+
+
+  </body>
 </html>
