@@ -13,7 +13,7 @@ The basic setup that has been described in this chapter can be used online via [
 
 Below is an embedded CodePen containing the `HelloMessage` component used throughout this chapter. By clicking on the "Result" tab you can view the React component rendered to the DOM. To edit the code just click on "EDIT ON CODEPEN" at the top right corner.
 
-<p data-height="265" data-theme-id="dark" data-slug-hash="rvrQod" data-default-tab="result" data-user="Bunlong" data-embed-version="2" data-pen-title="rvrQod" class="codepen">See the Pen <a href="https://codepen.io/Bunlong/pen/rvrQod/">rvrQod</a> by Bunlong (<a href="https://codepen.io/Bunlong">@Bunlong</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<p data-height="265" data-theme-id="0" data-slug-hash="rvrQod" data-default-tab="js,result" data-user="Bunlong" data-embed-version="2" data-pen-title="rvrQod" class="codepen">See the Pen <a href="https://codepen.io/Bunlong/pen/rvrQod/">rvrQod</a> by Bunlong (<a href="https://codepen.io/Bunlong">@Bunlong</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
 Note that the "Babel" tab indicates the JavaScript written into this tab will be transformed by Babel.

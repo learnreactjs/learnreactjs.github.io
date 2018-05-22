@@ -9,7 +9,7 @@ When a component is purely a result of `props` alone, no `state`, the component 
 
 In the example below `MyComponent` is the result of a function that returns the results from `React.createElement()`.
 
-<p data-height="265" data-theme-id="dark" data-slug-hash="ELrJWN" data-default-tab="result" data-user="Bunlong" data-embed-version="2" data-pen-title="ELrJWN" class="codepen">See the Pen <a href="https://codepen.io/Bunlong/pen/ELrJWN/">ELrJWN</a> by Bunlong (<a href="https://codepen.io/Bunlong">@Bunlong</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<p data-height="265" data-theme-id="dark" data-slug-hash="ELrJWN" data-default-tab="js,result" data-user="Bunlong" data-embed-version="2" data-pen-title="ELrJWN" class="codepen">See the Pen <a href="https://codepen.io/Bunlong/pen/ELrJWN/">ELrJWN</a> by Bunlong (<a href="https://codepen.io/Bunlong">@Bunlong</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
 Having look at the same code not using JSX should clarify what is going on.

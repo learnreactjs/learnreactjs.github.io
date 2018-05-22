@@ -7,7 +7,7 @@ last_modified_at: 2018-05-16T15:58:49-04:00
 
 Events can be added to React nodes like events can be added to DOM nodes. In the example below I am adding a very simple click and mouseover event to a React `<div>` node.
 
-<p data-height="265" data-theme-id="dark" data-slug-hash="PedNxy" data-default-tab="result" data-user="Bunlong" data-embed-version="2" data-pen-title="PedNxy" class="codepen">See the Pen <a href="https://codepen.io/Bunlong/pen/PedNxy/">PedNxy</a> by Bunlong (<a href="https://codepen.io/Bunlong">@Bunlong</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+<p data-height="265" data-theme-id="0" data-slug-hash="PedNxy" data-default-tab="js,result" data-user="Bunlong" data-embed-version="2" data-pen-title="PedNxy" class="codepen">See the Pen <a href="https://codepen.io/Bunlong/pen/PedNxy/">PedNxy</a> by Bunlong (<a href="https://codepen.io/Bunlong">@Bunlong</a>) on <a href="https://codepen.io">CodePen</a>.</p>
 <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
 
 Note how the property name for an event in React starts with 'on' and is passed in the props argument object to the `ReactElement()` function.
