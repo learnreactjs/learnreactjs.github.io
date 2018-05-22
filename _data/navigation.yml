@@ -36,8 +36,8 @@ docs:
         url: /define-react-node-event
   - title: JSX
     children:
-      - title: "What is React Node?"
-        url: /what-is-react-node
+      - title: "What is JSX?"
+        url: /what-is-jsx
       - title: "Creating React Nodes With JSX"
         url: /create-react-node-with-jsx
       - title: "Rendering JSX to DOM"

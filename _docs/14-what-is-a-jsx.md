@@ -1,6 +1,6 @@
 ---
 title: "What Is JSX?"
-permalink: /what-is-react-node
+permalink: /what-is-jsx
 excerpt: "What Is JSX? - Learn React"
 last_modified_at: 2018-05-18T15:58:49-04:00
 ---
