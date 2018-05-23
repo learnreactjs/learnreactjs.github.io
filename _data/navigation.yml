@@ -108,6 +108,8 @@ docs:
         url: /textarea-controlled-componet
       - title: "Select"
         url: /select-controlled-componet
+      - title: "Multiple Inputs"
+        url: /multiple-inputs-controlled-componet
       # - title: "Installation"
       #   url: /install-create-react-app
       # - title: "Structure"
