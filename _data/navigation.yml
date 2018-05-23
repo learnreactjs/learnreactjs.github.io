@@ -102,6 +102,8 @@ docs:
     children:
       - title: "What is Controlled Component?"
         url: /what-is-controlled-component
+      - title: "Textarea"
+        url: /textarea-controlled-componet
       # - title: "Installation"
       #   url: /install-create-react-app
       # - title: "Structure"

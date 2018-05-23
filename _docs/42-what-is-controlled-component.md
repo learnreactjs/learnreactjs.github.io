@@ -2,7 +2,7 @@
 title: "What is Controlled Component?"
 permalink: /what-is-controlled-component
 excerpt: "What is Controlled Component? - Learn React"
-last_modified_at: 2018-05-21T15:58:49-04:00
+last_modified_at: 2018-05-23T15:58:49-04:00
 ---
 
 A Controlled Component is one that takes its current value through state and notifies changes through callbacks like `onChange`.
