@@ -1,6 +1,6 @@
 ---
 title: "What is React?"
-permalink: /
+permalink: /what-is-react
 excerpt: "What is React? - Learn React"
 last_modified_at: 2018-05-14T15:58:49-04:00
 ---

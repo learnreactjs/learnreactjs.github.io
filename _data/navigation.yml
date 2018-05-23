@@ -2,8 +2,10 @@
 docs:
   - title: Introduction
     children:
-      - title: "What is React?"
+      - title: "Brief Introduction"
         url: /
+      - title: "What is React?"
+        url: /what-is-react
   - title: Semantics/Terminology
     children:
       - title: "React Semantics/Terminology"
