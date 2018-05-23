@@ -104,6 +104,8 @@ docs:
         url: /what-is-controlled-component
       - title: "Textarea"
         url: /textarea-controlled-componet
+      - title: "Select"
+        url: /select-controlled-componet
       # - title: "Installation"
       #   url: /install-create-react-app
       # - title: "Structure"
