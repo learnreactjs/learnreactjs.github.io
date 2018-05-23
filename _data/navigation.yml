@@ -98,6 +98,10 @@ docs:
         url: /state-vs-props
       - title: "Creating Stateless Function Components"
         url: /create-stateless-function-component
+  - title: React Forms Controlled Component
+    children:
+      - title: "What is Controlled Component?"
+        url: /what-is-controlled-component
       # - title: "Installation"
       #   url: /install-create-react-app
       # - title: "Structure"
