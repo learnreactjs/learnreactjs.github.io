@@ -114,6 +114,8 @@ docs:
     children:
       - title: "What is Uncontrolled Component?"
         url: /what-is-uncontrolled-component
+      - title: "Setting Default Value"
+        url: /set-default-value-uncontrolled-component
       # - title: "Installation"
       #   url: /install-create-react-app
       # - title: "Structure"
