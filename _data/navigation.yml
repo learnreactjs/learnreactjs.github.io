@@ -116,6 +116,8 @@ docs:
         url: /what-is-uncontrolled-component
       - title: "Setting Default Value"
         url: /set-default-value-uncontrolled-component
+      - title: "File Input"
+        url: /file-input-uncontrolled-component
       # - title: "Installation"
       #   url: /install-create-react-app
       # - title: "Structure"

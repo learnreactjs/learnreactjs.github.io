@@ -1,7 +1,7 @@
 ---
 title: "Setting Default Value"
 permalink: /set-default-value-uncontrolled-component
-excerpt: "Setting  Default Value - Learn React"
+excerpt: "Setting Default Value Uncontrolled Component - Learn React"
 last_modified_at: 2018-05-23T15:58:49-04:00
 ---
 
