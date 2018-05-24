@@ -110,6 +110,10 @@ docs:
         url: /select-controlled-componet
       - title: "Multiple Inputs"
         url: /multiple-inputs-controlled-componet
+  - title: React Forms Uncontrolled Component
+    children:
+      - title: "What is Uncontrolled Component?"
+        url: /what-is-uncontrolled-component
       # - title: "Installation"
       #   url: /install-create-react-app
       # - title: "Structure"
