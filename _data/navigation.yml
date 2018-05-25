@@ -1,4 +1,8 @@
 # main links
+# main links
+main:
+  - title: "[ Learn Create React App ]"
+    url: https://createreactapp.github.io/
 docs:
   - title: Introduction
     children:
