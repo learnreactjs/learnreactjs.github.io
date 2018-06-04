@@ -1,8 +1,7 @@
 # main links
-# main links
 main:
   - title: "[ Learn Create React App ]"
-    url: https://createreactapp.github.io/
+    url: https://www.themodernjs.com/create-react-app/what-is-create-react-app
 docs:
   - title: Introduction
     children:
